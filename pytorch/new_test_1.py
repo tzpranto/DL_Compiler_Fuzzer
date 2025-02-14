@@ -29,7 +29,7 @@ func = Model().to('cpu')
 x = torch.randn(1, 3, 64, 64)
 test_inputs = [x]
 
-print(func(test_inputs))
+print(func(x))
 
-# jit_func = torch.compile(func)
-# print(jit_func(test_inputs))
+jit_func = torch.compile(func)
+print(jit_func(x))
